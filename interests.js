@@ -72,7 +72,7 @@ exports.add = function(req, res) {
       id: req.body.id,
       name: req.body.name,
       level: req.body.level || 'Beginner',
-      isImproving: req.body.isImproving === 'true' ? true : false
+      isImproving: typeof req.body.isImproving == 'boolean' ? req.body.isImproving : req.body.isImproving === 'true' ? true : false
     });
 
     res.json({ success: true });
