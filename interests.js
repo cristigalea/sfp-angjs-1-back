@@ -51,7 +51,7 @@ exports.edit = function(req, res) {
       interests[i].id = req.body.id;
       interests[i].name = req.body.name;
       interests[i].level = req.body.level;
-      interests[i].isImproving = req.body.isImproving === 'true' ? true : false;
+      interests[i].isImproving = typeof req.body.isImproving == 'boolean' ? req.body.isImproving : req.body.isImproving === 'true' ? true : false;
     }
   }
 
